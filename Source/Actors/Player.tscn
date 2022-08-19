@@ -1,0 +1,95 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Tripulantes/Vermelho/Vermelho_Run.png" type="Texture" id=1]
+[ext_resource path="res://Source/Actors/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Tripulantes/Vermelho/Vermelho_Idle.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Tripulantes/Vermelho/Vermelho_Jump.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 4, 7 )
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 5.0
+height = 8.0
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 14, 8 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 13, 15 )
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 3
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 6 )
+animation = "Run"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 9, 0 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -4, -2 )
+rotation = 1.5708
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 2 )
+rotation = 1.5708
+shape = SubResource( 9 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.3, 0.3 )
+limit_left = 0
+limit_top = 0
+limit_right = 1472
+limit_bottom = 800
+
+[node name="DANO" type="Area2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DANO"]
+position = Vector2( 0, 1 )
+shape = SubResource( 10 )

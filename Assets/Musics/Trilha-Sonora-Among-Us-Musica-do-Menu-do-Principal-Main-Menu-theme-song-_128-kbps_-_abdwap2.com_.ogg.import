@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Trilha-Sonora-Among-Us-Musica-do-Menu-do-Principal-Main-Menu-theme-song-_128-kbps_-_abdwap2.com_.ogg-ef5bd2c07253e287c2f8c959ad9b990a.oggstr"
+
+[deps]
+
+source_file="res://Assets/Musics/Trilha-Sonora-Among-Us-Musica-do-Menu-do-Principal-Main-Menu-theme-song-_128-kbps_-_abdwap2.com_.ogg"
+dest_files=[ "res://.import/Trilha-Sonora-Among-Us-Musica-do-Menu-do-Principal-Main-Menu-theme-song-_128-kbps_-_abdwap2.com_.ogg-ef5bd2c07253e287c2f8c959ad9b990a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
